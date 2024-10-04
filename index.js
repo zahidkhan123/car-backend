@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "https://6700283893a3918b7ea2bf5f--carfrontendss.netlify.app/",
-    methods: ["POST"],
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
