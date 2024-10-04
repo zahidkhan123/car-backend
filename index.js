@@ -14,16 +14,10 @@ connectDB();
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  if (req.headers["x-forwarded-proto"] !== "https") {
-    return res.redirect(`https://${req.headers.host}${req.url}`);
-  }
-  next();
-});
 
 app.use(
   cors({
-    origin: "http://6700283893a3918b7ea2bf5f--carfrontendss.netlify.app/",
+    origin: "https://6700283893a3918b7ea2bf5f--carfrontendss.netlify.app/",
     methods: ["POST"],
     credentials: true,
   })
